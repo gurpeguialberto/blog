@@ -1068,3 +1068,258 @@ Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 02:24:22 +0
 
 
 Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 02:24:22 +0000
+
+
+Started GET "/" for 81.9.140.144 at 2014-08-31 03:21:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/action/.gem/ruby/2.1.1/gems/railties-4.1.0/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 32ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 61ms (Views: 53.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/comments.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+
+
+Started GET "/assets/application.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:04 +0000
+
+
+Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:05 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:05 +0000
+
+
+Started GET "/assets/comments.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:05 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:05 +0000
+
+
+Started GET "/posts/1" for 81.9.140.144 at 2014-08-31 03:22:08 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (191.4ms)
+Completed 200 OK in 202ms (Views: 198.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts/1/comments" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4aJ0WC2PcnVapUGKuFe0cSBiP0hby1UKE76iFILaZw=", "comment"=>{"body"=>"dasf"}, "commit"=>"Add Comment", "post_id"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered comments/_form.html.erb (49.8ms)
+  Rendered comments/new.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 111ms (Views: 107.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+
+
+Started GET "/assets/comments.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+
+
+Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+
+
+Started GET "/assets/application.css?body=1" for 81.9.140.144 at 2014-08-31 03:22:26 +0000
+
+
+Started POST "/posts/1/comments" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4aJ0WC2PcnVapUGKuFe0cSBiP0hby1UKE76iFILaZw=", "comment"=>{"body"=>"dasf"}, "commit"=>"Add Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "post_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "dasf"], ["created_at", "2014-08-31 03:40:53.106212"], ["post_id", 1], ["updated_at", "2014-08-31 03:40:53.106212"]]
+  [1m[35m (39.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://hasty-fireball-46-139508.euw1-2.nitrousbox.com/posts/1
+Completed 302 Found in 61ms (ActiveRecord: 41.1ms)
+
+
+Started GET "/posts/1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/application.css?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/comments.js?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 03:40:53 +0000
+
+
+Started POST "/posts/1/comments" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N4aJ0WC2PcnVapUGKuFe0cSBiP0hby1UKE76iFILaZw=", "comment"=>{"body"=>"Fixed comment controller at create method"}, "commit"=>"Add Comment", "post_id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "post_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Fixed comment controller at create method"], ["created_at", "2014-08-31 03:41:33.265847"], ["post_id", 1], ["updated_at", "2014-08-31 03:41:33.265847"]]
+  [1m[35m (24.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://hasty-fireball-46-139508.euw1-2.nitrousbox.com/posts/1
+Completed 302 Found in 31ms (ActiveRecord: 25.5ms)
+
+
+Started GET "/posts/1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/comments.css?body=1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+
+
+Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+
+
+Started GET "/assets/application.css?body=1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+
+
+Started GET "/assets/comments.js?body=1" for 81.9.140.144 at 2014-08-31 03:41:33 +0000
+
+
+Started GET "/posts/1" for 81.9.140.144 at 2014-08-31 03:52:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  Rendered posts/show.html.erb within layouts/application (53.7ms)
+Completed 200 OK in 166ms (Views: 135.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/comments.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/application.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/comments.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:48 +0000
+
+
+Started GET "/posts" for 81.9.140.144 at 2014-08-31 03:52:58 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/comments.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:58 +0000
+
+
+Started GET "/assets/posts.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:59 +0000
+
+
+Started GET "/assets/posts.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:59 +0000
+
+
+Started GET "/assets/comments.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 81.9.140.144 at 2014-08-31 03:52:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 81.9.140.144 at 2014-08-31 03:52:59 +0000
+
+
+Started GET "/posts/2/edit" for 81.9.140.144 at 2014-08-31 03:53:03 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/2/edit" for 81.9.140.144 at 2014-08-31 03:53:18 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts"  WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/_form.html.erb (4.8ms)
+  Rendered posts/edit.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.2ms)
